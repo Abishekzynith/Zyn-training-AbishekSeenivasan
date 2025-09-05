@@ -15,7 +15,7 @@ tableextension 50119 SalesInvoiceTableExt extends "Sales Header"
             DataClassification = CustomerContent;
             TableRelation = "Standard Text"."Code";
         }
-        field(50103; "beginning inv Text"; Text[250])
+        field(50130; "beginning inv Text"; Text[250])
         {
             Caption = 'beginning inv Text';
             DataClassification = CustomerContent;

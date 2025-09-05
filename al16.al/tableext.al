@@ -23,5 +23,18 @@ tableextension 50135 CustomerExt extends Customer
                 Status = const(Open)
             ));
         }
+        
+    
+        field(50145; "Created Date"; Date)
+        {
+            DataClassification = SystemMetadata;
+        }
+    
+
     }
+     trigger OnInsert()
+    begin
+        if "Created Date" = 0D then
+            "Created Date" := Today;
+    end;
 }

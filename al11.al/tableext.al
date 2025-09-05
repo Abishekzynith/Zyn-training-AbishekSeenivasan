@@ -1,4 +1,4 @@
-tableextension 50145 CustomerLoyaltyExt extends Customer
+tableextension 50146 CustomerLoyaltyExt extends Customer
 
 
 {

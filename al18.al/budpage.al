@@ -1,6 +1,6 @@
 page 50152 "budget List Page"
 {
-    PageType = List;
+    PageType = Listpart;
     SourceTable = "budget table";
     ApplicationArea = ALL;
     Caption = 'budget List';

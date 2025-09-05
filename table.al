@@ -43,7 +43,7 @@ table 50143 "Modify Data"
         key(PrK; "Entry No.") { Clustered = true; }
     }
 }
-table 50111 "Field Lookup Buffer"
+table 50113 "Field Lookup Buffer"
 {
     DataClassification = ToBeClassified;
 
