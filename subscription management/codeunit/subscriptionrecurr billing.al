@@ -1,6 +1,6 @@
 codeunit 50215 "Subscription Recurring Billing"
 {
-    SingleInstance = true;
+   
 
     var
         SubscriptionRec: Record Subscription;

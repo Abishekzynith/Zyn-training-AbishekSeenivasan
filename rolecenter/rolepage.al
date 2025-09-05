@@ -9,7 +9,7 @@ page 50150 "MyRoleCenter"
     {
         area(rolecenter)
         {
-             part(SubscriptionCue; "Zyn Subscription Cue Card")
+             part(SubscriptionCue; "Zyn-Subscription Cue Card")
             {
                 ApplicationArea = All;
             }
