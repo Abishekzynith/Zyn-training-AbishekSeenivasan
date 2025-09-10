@@ -30,6 +30,8 @@ page 50212 SubscriptionCard
                 field(EndDate;Rec.EndDate){ApplicationArea=All;}
                 field(Status;Rec.Status){ApplicationArea=All;}
                 field(NextBilling;Rec.NextBilling){ApplicationArea=All;}
+                field(NextRenewalDate; Rec.NextRenewalDate) { ApplicationArea = All; }
+                field(RemainderSent; Rec.RemainderSent) { ApplicationArea = All;}
             }
         }
     }
@@ -58,6 +60,8 @@ page 50211 SubscriptionList
                 field(EndDate;Rec.EndDate){ApplicationArea=All;}
                 field(Status;Rec.Status){ApplicationArea=All;}
                 field(NextBilling;Rec.NextBilling){ApplicationArea=All;}
+                field(NextBillingDate; Rec.NextRenewalDate) { ApplicationArea = All; }
+                field(ReminderSent; Rec.RemainderSent) { ApplicationArea = All; }
             }
         }
     }

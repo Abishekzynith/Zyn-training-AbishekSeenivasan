@@ -13,6 +13,10 @@ page 50150 "MyRoleCenter"
             {
                 ApplicationArea = All;
             }
+            part(RenewNotification; "RenewNotification")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 

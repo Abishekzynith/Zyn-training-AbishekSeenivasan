@@ -24,8 +24,7 @@ codeunit 50215 "Subscription Recurring Billing"
                     if not PlanRec.Get(SubscriptionRec.PlanID) then
                         continue;
 
-                    
-                    // NewInvNo := GetNextInvoiceNo();
+            
                     NewInvNo:='subinv-' + Format(SubscriptionRec.SubID)+ '-' + Format(WorkDt,0,'<Year4><Month,2>');
                     SalesHeader.Init();
                     SalesHeader."Document Type" := SalesHeader."Document Type"::Invoice;
@@ -54,37 +53,4 @@ codeunit 50215 "Subscription Recurring Billing"
             until SubscriptionRec.Next() = 0;
     end;
 
-    // local procedure GetNextInvoiceNo(): Code[20]
-    // var
-    //     LastHdr: Record "Sales Header";
-    //     NumText: Text;
-    //     LastNum: Integer;
-    //     NextNum: Integer;
-    //     Suffix: Text[10];
-    // begin
-        
-    //     LastHdr.Reset();
-    //     LastHdr.SetRange("Document Type", LastHdr."Document Type"::Invoice);
-    //     if LastHdr.FindLast() then begin
-    //         if CopyStr(LastHdr."No.", 1, 3) = 'inv' then begin
-    //             NumText := CopyStr(LastHdr."No.", 4); // text after inv
-    //             if EVALUATE(LastNum, NumText) then
-    //                 NextNum := LastNum + 1
-    //             else
-    //                 NextNum := 1;
-    //         end else
-    //             NextNum := 1;
-    //     end else
-    //         NextNum := 1;
-
-        
-    //     if NextNum < 10 then
-    //         Suffix := '00' + Format(NextNum)
-    //     else if NextNum < 100 then
-    //         Suffix := '0' + Format(NextNum)
-    //     else
-    //         Suffix := Format(NextNum);
-
-    //     exit('sin' + Suffix);
-    // end;
 }

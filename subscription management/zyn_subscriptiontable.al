@@ -45,6 +45,25 @@ table 50181 Subscription
         field(5; EndDate; Date) { DataClassification = ToBeClassified; }
         field(6; Status; Enum StatusEnum) { DataClassification = ToBeClassified; }
         field(7; NextBilling; Date) { DataClassification = ToBeClassified; }
+        field(9; NextRenewalDate; Date)
+        {
+            DataClassification = ToBeClassified;
+           trigger OnValidate()
+            begin
+              
+                  if (EndDate <> 0D) then
+            "NextRenewalDate" := CalcDate('<-15D>', EndDate);
+
+        
+        if "NextRenewalDate" <> 0D then
+            "NextBilling" := "NextRenewalDate";
+            end;
+        }
+        field(10; RemainderSent; Boolean)
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Remainder Sent';
+        }
     }
 
     keys
@@ -76,6 +95,13 @@ table 50181 Subscription
             
             if NextBilling = 0D then
                 NextBilling := System.CalcDate('<+1M>', StartDate);
+
+                  // Auto-calc Next Renewal Date = EndDate
+            NextRenewalDate := EndDate;
+
+            // Auto-calc Next Billing = 15 days before Renewal
+            if NextRenewalDate <> 0D then
+                NextBilling := CalcDate('<-15D>', NextRenewalDate);
         end;
     end;
 
@@ -96,4 +122,5 @@ table 50181 Subscription
         if NextBilling <> 0D then
             NextBilling := System.CalcDate('<+1M>', NextBilling);
     end;
+
 }
