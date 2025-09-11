@@ -20,7 +20,7 @@ codeunit 50190 "Subscription Reminder Mgt"
                         MyNotification.Scope := NotificationScope::LocalScope;
                         MyNotification.Message :=
                           StrSubstNo(
-                            'Hi %1 (%2), you have %3 days left to renew your subscription (renewal on %4).',
+                            'Hi %1 (%2), you have %3 days left to renew your subscription (renewal on %4)..',
                             Customer.Name,
                             Customer."No.",
                             15,
